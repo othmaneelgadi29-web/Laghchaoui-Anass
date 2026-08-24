@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maître Anass Laghchaoui — Avocat à Casablanca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181a;
+    --ink-2:#3a4245;
+    --paper:#f7f5f0;
+    --paper-2:#ece8df;
+    --emerald:#0e4d3c;
+    --emerald-light:#1c7a5e;
+    --gold:#c19a49;
+    --gold-light:#dcb968;
+    --line: rgba(20,24,26,0.13);
+    --line-light: rgba(247,245,240,0.16);
+    --shadow: 0 24px 60px -28px rgba(20,24,26,0.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(247,245,240,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1160px;margin:0 auto;padding:20px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    font-family:'Fraunces',serif;
+    font-size:1.1rem;
+    font-weight:500;
+  }
+  .brand .mono{
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--emerald);
+    color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-size:0.9rem;
+    letter-spacing:0.02em;
+  }
+  nav ul{list-style:none;display:flex;gap:34px;}
+  nav a{
+    font-size:0.86rem;
+    font-weight:500;
+    color:var(--ink-2);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav a::after{
+    content:"";position:absolute;left:0;bottom:0;
+    width:0;height:1.5px;background:var(--gold);
+    transition:width .3s ease;
+  }
+  nav a:hover::after{width:100%;}
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.76rem;
+    letter-spacing:0.04em;
+    background:var(--emerald);
+    color:var(--paper);
+    padding:11px 22px;
+    border-radius:30px;
+    transition:background .25s ease, transform .2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--emerald-light);transform:translateY(-1px);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:190px 0 100px;
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 700px 500px at 82% 0%, rgba(28,122,94,0.5), transparent 60%),
+      radial-gradient(ellipse 600px 500px at 10% 100%, rgba(193,154,73,0.18), transparent 60%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(247,245,240,0.03) 80px);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;z-index:1;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(247,245,240,0.08);
+    border:1px solid rgba(247,245,240,0.18);
+    padding:8px 16px 8px 8px;
+    border-radius:30px;
+    margin-bottom:32px;
+  }
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-light);}
+  .hero-badge span{font-family:'IBM Plex Mono',monospace;font-size:0.74rem;letter-spacing:0.04em;color:rgba(247,245,240,0.85);}
+  .hero h1{
+    font-size:clamp(2.6rem, 5.4vw, 4.6rem);
+    line-height:1.06;
+    max-width:900px;
+    margin-bottom:26px;
+    color:var(--paper);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-light);
+  }
+  .hero p.lead{
+    font-size:1.15rem;
+    color:rgba(247,245,240,0.72);
+    max-width:560px;
+    margin-bottom:40px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:70px;}
+  .btn-primary{
+    background:var(--gold-light);
+    color:var(--ink);
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:500;
+    font-size:0.82rem;
+    letter-spacing:0.03em;
+    padding:17px 32px;
+    border-radius:30px;
+    transition:background .25s ease, transform .25s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:#eccb7d;transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid rgba(247,245,240,0.35);
+    color:var(--paper);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.82rem;
+    letter-spacing:0.03em;
+    padding:17px 32px;
+    border-radius:30px;
+    transition:background .25s ease, border-color .25s ease;
+  }
+  .btn-ghost:hover{background:rgba(247,245,240,0.08);border-color:rgba(247,245,240,0.6);}
+
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:rgba(247,245,240,0.14);
+    border:1px solid rgba(247,245,240,0.14);
+    border-radius:16px;
+    overflow:hidden;
+  }
+  .hero-stats div{
+    background:rgba(247,245,240,0.03);
+    padding:26px 24px;
+  }
+  .hero-stats .num{
+    font-family:'Fraunces',serif;
+    font-size:2rem;
+    color:var(--gold-light);
+    display:block;
+    margin-bottom:4px;
+  }
+  .hero-stats .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(247,245,240,0.6);
+  }
+
+  /* ---------- Article sections ---------- */
+  section.article{
+    padding:110px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section.article.tint{background:var(--paper-2);}
+  section.article.emerald{
+    background:var(--emerald);
+    color:var(--paper);
+  }
+  section.article.emerald h2, section.article.emerald h3{color:var(--paper);}
+  section.article.emerald .eyebrow{color:var(--gold-light);}
+  section.article.emerald .eyebrow::before{background:var(--gold-light);}
+
+  .section-head{
+    max-width:640px;
+    margin:0 auto 60px;
+    text-align:center;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin:16px 0 14px;}
+  .section-head p{color:var(--ink-2);font-size:1.02rem;}
+  section.article.emerald .section-head p{color:rgba(247,245,240,0.75);}
+
+  /* Presentation */
+  .presentation-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  .presentation-grid p{color:var(--ink-2);margin-bottom:18px;font-size:1.03rem;}
+  .badge-monogram{
+    width:64px;height:64px;
+    border-radius:50%;
+    background:var(--emerald);
+    color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-size:1.5rem;
+    margin-bottom:24px;
+  }
+  .credentials{
+    background:var(--ink);
+    color:var(--paper);
+    padding:38px;
+    border-radius:18px;
+  }
+  .credentials ul{list-style:none;}
+  .credentials li{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 0;
+    border-bottom:1px solid rgba(247,245,240,0.12);
+    font-size:0.94rem;
+  }
+  .credentials li:last-child{border-bottom:none;}
+  .credentials li span:first-child{color:rgba(247,245,240,0.6);}
+  .credentials li span:last-child{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;
+    color:var(--gold-light);
+    text-align:right;
+  }
+
+  /* Practice areas */
+  .practice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .practice-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:36px 30px;
+    border-radius:18px;
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .practice-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+    border-color:transparent;
+  }
+  .practice-card .idx{
+    display:inline-flex;
+    align-items:center;justify-content:center;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--paper-2);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--emerald);
+    margin-bottom:22px;
+  }
+  .practice-card h3{font-size:1.18rem;margin-bottom:10px;}
+  .practice-card p{color:var(--ink-2);font-size:0.92rem;}
+
+  /* Approach timeline */
+  .approach-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+  }
+  .approach-item{
+    background:rgba(247,245,240,0.06);
+    border:1px solid rgba(247,245,240,0.14);
+    padding:34px 28px;
+    border-radius:18px;
+  }
+  .approach-item .step{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:2rem;
+    color:var(--gold-light);
+    display:block;
+    margin-bottom:18px;
+  }
+  .approach-item h3{font-size:1.12rem;margin-bottom:10px;font-weight:500;}
+  .approach-item p{color:rgba(247,245,240,0.7);font-size:0.94rem;}
+
+  /* Why choose stats strip */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+  }
+  .why-card{
+    text-align:center;
+    padding:34px 20px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+  }
+  .why-card .icon{
+    width:50px;height:50px;
+    border-radius:50%;
+    background:var(--paper-2);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 18px;
+    color:var(--emerald);
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.3rem;
+  }
+  .why-card h3{font-size:1.02rem;margin-bottom:8px;}
+  .why-card p{font-size:0.86rem;color:var(--ink-2);}
+
+  /* Google card mock */
+  .google-card{
+    max-width:520px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:32px;
+    box-shadow:var(--shadow);
+  }
+  .google-card .g-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
+  .google-card h3{font-size:1.2rem;margin-bottom:6px;}
+  .google-card .g-cat{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.74rem;
+    color:var(--ink-2);
+    letter-spacing:0.02em;
+  }
+  .google-rating{display:flex;align-items:center;gap:8px;margin-bottom:22px;}
+  .google-rating .score{font-family:'Fraunces',serif;font-size:1.3rem;}
+  .google-rating .stars{color:var(--gold);letter-spacing:2px;}
+  .google-rating .count{font-size:0.82rem;color:var(--ink-2);}
+  .google-card dl{display:flex;flex-direction:column;gap:14px;}
+  .google-card dl div{display:flex;gap:12px;font-size:0.92rem;}
+  .google-card dt{color:var(--emerald);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;min-width:80px;padding-top:2px;}
+  .google-card dd{color:var(--ink);}
+
+  /* FAQ */
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:24px 0;
+    cursor:pointer;
+  }
+  .faq-q{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    font-family:'Fraunces',serif;
+    font-size:1.08rem;
+  }
+  .faq-q .plus{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--gold);
+    font-size:1.15rem;
+    transition:transform .25s ease;
+    flex-shrink:0;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+    color:var(--ink-2);
+    font-size:0.94rem;
+  }
+  .faq-item.open .faq-a{max-height:200px;margin-top:14px;}
+
+  /* Contact */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  .contact-info dl{display:flex;flex-direction:column;gap:24px;}
+  .contact-info dt{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  .contact-info dd{font-size:1.02rem;color:var(--ink);}
+  .hours-table{margin-top:28px;border-top:1px solid var(--line);padding-top:20px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;font-size:0.88rem;}
+  .hours-row span:first-child{color:var(--ink-2);}
+  .hours-row span:last-child{font-family:'IBM Plex Mono',monospace;font-size:0.82rem;}
+
+  .contact-form{
+    background:var(--ink);
+    color:var(--paper);
+    padding:38px;
+    border-radius:18px;
+  }
+  .contact-form .field{margin-bottom:20px;}
+  .contact-form label{
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(247,245,240,0.6);
+    margin-bottom:8px;
+  }
+  .contact-form select,
+  .contact-form input, .contact-form textarea{
+    width:100%;
+    background:rgba(247,245,240,0.06);
+    border:1px solid rgba(247,245,240,0.18);
+    padding:13px 14px;
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    color:var(--paper);
+    border-radius:8px;
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  .contact-form select option{background:var(--ink);}
+  .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(247,245,240,0.35);}
+  .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus{border-color:var(--gold);}
+  .contact-form textarea{resize:vertical;min-height:90px;}
+  .contact-form .btn-primary{width:100%;text-align:center;}
+
+  /* Footer */
+  footer{
+    background:var(--ink);
+    color:rgba(247,245,240,0.55);
+    padding:56px 0 32px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:24px;
+    padding-bottom:32px;
+    border-bottom:1px solid rgba(247,245,240,0.12);
+    margin-bottom:24px;
+  }
+  .footer-brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.1rem;color:var(--paper);}
+  footer nav ul{list-style:none;display:flex;gap:28px;}
+  footer nav a{font-size:0.84rem;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* Reveal animation */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* Mobile */
+  @media (max-width:860px){
+    nav ul, .nav-cta{display:none;}
+    .hero{padding:150px 0 70px;}
+    .hero-stats{grid-template-columns:repeat(2,1fr);}
+    .presentation-grid, .contact-grid{grid-template-columns:1fr;gap:36px;}
+    .practice-grid{grid-template-columns:1fr;}
+    .approach-list{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .wrap{padding:0 22px;}
+    section.article{padding:70px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand"><span class="mono">AL</span>Laghchaoui</div>
+    <nav>
+      <ul>
+        <li><a href="#presentation">Cabinet</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#approche">Approche</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badge"><span class="dot"></span><span>Cabinet d'avocats — Casablanca</span></div>
+      <h1>Le droit, expliqué<br>simplement. Défendu <em>fermement</em>.</h1>
+      <p class="lead">Maître Anass Laghchaoui conseille et défend particuliers et entreprises à Casablanca, avec une approche directe, humaine et orientée résultats.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        <a href="#expertise" class="btn-ghost">Voir les domaines d'intervention</a>
+      </div>
+    </div>
+    <div class="hero-stats reveal">
+      <div><span class="num">10+</span><span class="label">Ans d'exercice</span></div>
+      <div><span class="num">200+</span><span class="label">Dossiers traités</span></div>
+      <div><span class="num">24h</span><span class="label">Délai de réponse</span></div>
+      <div><span class="num">100%</span><span class="label">Confidentialité</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="article" id="presentation">
+  <div class="wrap">
+    <div class="presentation-grid">
+      <div class="reveal">
+        <div class="eyebrow">Article I — Présentation</div>
+        <h2 style="margin:20px 0 22px;font-size:clamp(1.8rem,2.8vw,2.4rem);">Un cabinet à taille humaine, une défense sans compromis</h2>
+        <p>Basé à Casablanca, le cabinet de Maître Anass Laghchaoui accompagne particuliers, entrepreneurs et sociétés dans leurs démarches juridiques, du simple conseil au contentieux le plus complexe.</p>
+        <p>Chaque client est reçu personnellement, chaque dossier analysé en profondeur, avec une stratégie construite sur mesure — jamais de réponse générique ou standardisée.</p>
+        <p>La clarté et la disponibilité sont au cœur de la pratique du cabinet : vous savez toujours où en est votre dossier et quelles sont vos options réelles.</p>
+      </div>
+      <div class="reveal">
+        <div class="credentials">
+          <div class="badge-monogram">AL</div>
+          <ul>
+            <li><span>Barreau</span><span>Casablanca</span></li>
+            <li><span>Langues</span><span>Arabe · Français · Anglais</span></li>
+            <li><span>Consultation</span><span>Cabinet / Visioconférence</span></li>
+            <li><span>Disponibilité</span><span>Lun–Ven, 9h–18h</span></li>
+            <li><span>Premier échange</span><span>Réponse sous 24h</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article tint" id="expertise">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="justify-content:center;">Article II — Expertise</div>
+      <h2>Domaines d'intervention</h2>
+      <p>Une pratique généraliste construite sur des domaines maîtrisés en profondeur, pour un conseil précis et directement applicable.</p>
+    </div>
+    <div class="practice-grid reveal">
+      <div class="practice-card">
+        <span class="idx">01</span>
+        <h3>Droit des affaires</h3>
+        <p>Constitution de sociétés, contrats commerciaux et litiges entre entreprises.</p>
+      </div>
+      <div class="practice-card">
+        <span class="idx">02</span>
+        <h3>Droit immobilier</h3>
+        <p>Transactions, baux et litiges liés à la propriété et à la copropriété.</p>
+      </div>
+      <div class="practice-card">
+        <span class="idx">03</span>
+        <h3>Droit de la famille</h3>
+        <p>Divorce, garde d'enfants et successions, avec un accompagnement discret.</p>
+      </div>
+      <div class="practice-card">
+        <span class="idx">04</span>
+        <h3>Droit du travail</h3>
+        <p>Conseil aux employeurs et défense des salariés sur les litiges contractuels.</p>
+      </div>
+      <div class="practice-card">
+        <span class="idx">05</span>
+        <h3>Droit pénal</h3>
+        <p>Assistance et défense à toutes les étapes de la procédure pénale.</p>
+      </div>
+      <div class="practice-card">
+        <span class="idx">06</span>
+        <h3>Conseil juridique</h3>
+        <p>Consultations ponctuelles pour anticiper les risques avant qu'ils ne deviennent litiges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article emerald" id="approche">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="justify-content:center;">Article III — Méthode</div>
+      <h2>Notre approche</h2>
+      <p>Trois étapes simples, pensées pour que vous gardiez toujours une vision claire de votre dossier.</p>
+    </div>
+    <div class="approach-list reveal">
+      <div class="approach-item">
+        <span class="step">I.</span>
+        <h3>Premier échange</h3>
+        <p>Un rendez-vous, en cabinet ou en visio, pour comprendre votre situation sans engagement.</p>
+      </div>
+      <div class="approach-item">
+        <span class="step">II.</span>
+        <h3>Analyse et stratégie</h3>
+        <p>Étude approfondie du dossier et définition d'une stratégie claire, expliquée simplement.</p>
+      </div>
+      <div class="approach-item">
+        <span class="step">III.</span>
+        <h3>Action et suivi</h3>
+        <p>Mise en œuvre de la stratégie avec un point d'avancement régulier sur votre dossier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article" id="pourquoi">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="justify-content:center;">Article IV — Pourquoi nous choisir</div>
+      <h2>Une relation de confiance, pas juste un dossier</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="icon">✓</div>
+        <h3>Réponse rapide</h3>
+        <p>Une première réponse sous 24h ouvrées, à chaque demande.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">✓</div>
+        <h3>Transparence</h3>
+        <p>Des honoraires clairs, discutés dès le premier rendez-vous.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">✓</div>
+        <h3>Disponibilité</h3>
+        <p>Un accès direct à votre avocat, sans intermédiaire.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">✓</div>
+        <h3>Confidentialité</h3>
+        <p>Chaque dossier est traité avec la plus stricte discrétion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article tint" id="google">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="justify-content:center;">Retrouvez-nous</div>
+      <h2>Sur Google également</h2>
+      <p>Consultez notre fiche, laissez un avis ou obtenez l'itinéraire jusqu'au cabinet en un clic.</p>
+    </div>
+    <div class="google-card reveal">
+      <div class="g-top">
+        <div>
+          <h3>Cabinet d'avocat Laghchaoui Anass</h3>
+          <div class="g-cat">Avocat · Casablanca</div>
+        </div>
+      </div>
+      <div class="google-rating">
+        <span class="score">5.0</span>
+        <span class="stars">★★★★★</span>
+        <span class="count">Avis Google</span>
+      </div>
+      <dl>
+        <div><dt>Adresse</dt><dd>2ème étage, immeuble 165, boulevard Colonel Allam, Casablanca 20250</dd></div>
+        <div><dt>Téléphone</dt><dd>06 64 02 05 61</dd></div>
+        <div><dt>Horaires</dt><dd>Lundi – Vendredi, 9h00 – 18h00</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="article" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="justify-content:center;">Article V — FAQ</div>
+      <h2>Questions fréquentes</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q"><span>Comment se déroule le premier rendez-vous ?</span><span class="plus">+</span></div>
+        <div class="faq-a">Le premier échange permet de présenter votre situation en toute confidentialité, au cabinet ou en visioconférence, sans engagement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Quels sont vos délais de réponse ?</span><span class="plus">+</span></div>
+        <div class="faq-a">Toute demande reçoit une première réponse sous 24h ouvrées.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Intervenez-vous en dehors de Casablanca ?</span><span class="plus">+</span></div>
+        <div class="faq-a">Oui, le cabinet accompagne des clients dans tout le Maroc, avec des consultations à distance lorsque nécessaire.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Comment sont fixés vos honoraires ?</span><span class="plus">+</span></div>
+        <div class="faq-a">Les honoraires sont discutés et convenus dès le premier rendez-vous, en toute transparence.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article tint" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:56px;">
+      <div class="eyebrow" style="justify-content:center;">Article VI — Contact</div>
+      <h2>Prendre rendez-vous</h2>
+      <p>Un premier échange, sans engagement, pour faire le point sur votre situation.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <dl>
+          <div><dt>Adresse</dt><dd>2ème étage, immeuble 165, boulevard Colonel Allam, Casablanca 20250</dd></div>
+          <div><dt>Téléphone</dt><dd>06 64 02 05 61</dd></div>
+          <div><dt>Email</dt><dd>contact@laghchaoui-avocat.ma</dd></div>
+        </dl>
+        <div class="hours-table">
+          <div class="hours-row"><span>Lundi – Vendredi</span><span>9h00 – 18h00</span></div>
+          <div class="hours-row"><span>Samedi</span><span>Sur rendez-vous</span></div>
+          <div class="hours-row"><span>Dimanche</span><span>Fermé</span></div>
+        </div>
+      </div>
+      <form class="contact-form reveal">
+        <div class="field">
+          <label>Nom complet</label>
+          <input type="text" placeholder="Votre nom">
+        </div>
+        <div class="field">
+          <label>Téléphone ou email</label>
+          <input type="text" placeholder="Vos coordonnées">
+        </div>
+        <div class="field">
+          <label>Domaine concerné</label>
+          <select>
+            <option>Droit des affaires</option>
+            <option>Droit immobilier</option>
+            <option>Droit de la famille</option>
+            <option>Droit du travail</option>
+            <option>Droit pénal</option>
+            <option>Autre / Conseil général</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Votre demande</label>
+          <textarea placeholder="Décrivez brièvement votre situation"></textarea>
+        </div>
+        <a href="#" class="btn-primary">Envoyer la demande</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="mono" style="width:32px;height:32px;font-size:0.8rem;">AL</span>Laghchaoui</div>
+      <nav><ul>
+        <li><a href="#presentation">Cabinet</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#approche">Approche</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cabinet d'avocat Laghchaoui Anass — Casablanca</span>
+      <span>Maquette de présentation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click', ()=>{
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
